@@ -42,10 +42,10 @@ function showSolutionsMessage(a, b, c) {
 //data = {course: []};
 
 function getAverageMark(marks) {
-  let sum = 0;
   if (marks.length === 0) {
       return 0
   };
+  let sum = 0;
   for (let i = 0; i < marks.length; i++) {
       sum += marks[i];
   }
@@ -54,35 +54,33 @@ function getAverageMark(marks) {
 
 function getAverageScore(data) {
     let average = 0;
-    let size = 0;
-   
-    for (let course in data) {
-        console.log(`data.${course} = ${data[course]}`);
+    let count = 0;
+
+    for(let course in data) {
         average += getAverageMark(data[course]);
         data[course] = getAverageMark(data[course]);
-        size ++;
-    } if (size !== 0) {
-        average = average / size;
-    } 
-       data.average = data;
-      return {
-       data
-    };
+        count ++;
+    }
+    if (count !== 0) {
+        average = average / count;
+    }
+    data.average = average;
+    return data  
 }
      
 // Задача 3
 
  function getPersonData(secretData) {
-   return getDecodedValue();
+   return {
+      firstName: getDecodedValue(secretData.aaa),
+      lastName: getDecodedValue(secretData.bbb) 
+   }; 
 }
 
 function getDecodedValue(secret) {
-    const aaa = firstName;
-    const bbb = lastName;
-    if (secret.aaa === 0 || secret.bbb === 0) {
-        return    'Родриго'  
-    } else if (secret.aaa === 1 || secret.bbb === 1)  {
-        return  'Эмильо'
-            
-    } 
+    if (secret === 0)  {
+        return  'Родриго' 
+    } else if (secret === 1)  {
+        return  'Эмильо'   
+    };
 }
