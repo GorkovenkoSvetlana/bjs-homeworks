@@ -13,13 +13,12 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
 function getGreeting(name) {
     
-    if (Boolean(name)) {
+    if (name) {
         console.log(`Привет, мир! Меня зовут ${name}`);
         return `Привет, мир! Меня зовут ${name}`;
     } else  {
         console.log(`Привет, мир! Меня зовут Аноним`);
         return `Привет, мир! Меня зовут Аноним`;
     }
-    
     
 }

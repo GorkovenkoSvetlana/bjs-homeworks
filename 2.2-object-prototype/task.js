@@ -1,8 +1,8 @@
 function getAnimalSound(animal) {
-   let animalSound = animal.sound;
    if (animal === undefined) {
        return null
-   };
+   }; 
+      let animalSound = animal.sound;
        return animalSound
    }
 
@@ -21,14 +21,9 @@ function getAverageMark(marks) {
 
 function checkBirthday(birthday) {
     let now = Date.now();
-    birthday = Number(new Date(birthday));
-    let diff = now - birthday;
+    let diff = now - Number(new Date(birthday));
     let age = diff / 31557600000; 
     // 31557600000 как среднее арифметическое за 4 года, три из которых 
     //обычные (31536000000), а четвертый - високосный (31622400000)
-     if (age >= 18) {
-        return true
-     } else  {
-        return false
-     } 
+     return age >= 18;
     }
