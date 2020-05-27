@@ -19,7 +19,7 @@ class Weapon {
     getDamage() {
       if (this.durability === 0) {
         return 0;
-      } else if (this.durability >= this._durability) {
+      } else if ((this.durability - damage) >= this._durability * 0.3) {
         return this.attack;
       } else {
         return this.attack / 2;
@@ -161,6 +161,9 @@ class StudentLog {
   }
   
   addGrade(grade, subject) {
+    if (!(subject in this data)) {
+      this.data[subject] = [];
+    }
     if ( (typeof grade !== 'number') || grade < 1 || grade > 5) {
       console.log(`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5`);
   } else {
