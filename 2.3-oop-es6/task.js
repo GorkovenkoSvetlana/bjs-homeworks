@@ -19,7 +19,7 @@ class Weapon {
     getDamage() {
       if (this.durability === 0) {
         return 0;
-      } else if ((this.durability - damage) >= this._durability * 0.3) {
+      } else if (this.durability >= this._durability * 0.3) {
         return this.attack;
       } else {
         return this.attack / 2;
@@ -157,11 +157,11 @@ class StudentLog {
   }
 
   getName() {
-    return this.mame;
+    return this.name;
   }
   
   addGrade(grade, subject) {
-    if (!(subject in this data)) {
+    if (!(subject in this.data)) {
       this.data[subject] = [];
     }
     if ( (typeof grade !== 'number') || grade < 1 || grade > 5) {
